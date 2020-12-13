@@ -19,6 +19,7 @@ function merge(arr1, arr2){
         merged.push(arr2[j])
         j++
     }
+    console.log("###", merged)
     return merged
 }
 
@@ -29,6 +30,6 @@ function mergeSort(arr){
     let mid = Math.floor(arr.length/2)
     let left = mergeSort(arr.slice(0,mid))
     let right = mergeSort(arr.slice(mid))
+    console.log("left",left,"right", right)
     return merge(left, right)
-
 }
