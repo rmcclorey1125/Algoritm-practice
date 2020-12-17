@@ -45,10 +45,103 @@ class SinglyLinkedList {
         return current
     }
 
-    traverse(){
-        let current = this.head
-        while(current){
-            current = current.next
+    shift(){
+        if(!this.head){
+            return undefined
         }
+        let oldNode = this.head
+        this.head = oldNode.next
+        this.length--
+        if(this.length === 0){
+            this.tail = null
+        }
+        return oldNode
+    }
+
+    unshift(val){
+        let newValue = new Node(val)
+        if(!this.head){
+            this.head = newValue
+            this.tail = this.head
+        } else {
+            newValue.next = this.head
+            this.head = newValue
+        }
+        this.length++
+        return this
+    }
+
+    get(index){
+        if(index < 0 || index >= this.length){
+            return null
+        }
+        let count = 0
+        let current = this.head
+        while(count !== index){
+            current = current.next
+            count++
+        }
+        return current
+    }
+
+    set(index, val){
+        let foundNode = this.get(index)
+        if(foundNode){
+            foundNode.val = val
+            return true
+        }
+        return false
+    }
+
+    insert(index, val){
+        if(index < 0 || index > this.length){
+            return false
+        }
+        if(index === 0){
+            return !!this.unshift(val)
+        }
+        if(index === this.length){
+            return !!this.push(val)
+        }
+
+        let newNode = new Node(val)
+        let prevNode = this.get(index-1)
+        let oldPrev = prevNode.next 
+        prevNode.next = newNode
+        newNode.next = oldPrev
+        this.length++
+        return true
+    }
+
+    remove(index){
+        if(index < 0 || index >= this.length){
+            return undefined
+        }
+        if(index === this.length-1){
+            return this.pop()
+        }
+        if(index === 0){
+            return this.shift()
+        }
+        let beforeDeleted = this.get(index-1)
+        let deleted = beforeDeleted.next
+        beforeDeleted.next = deleted.next
+        this.length--
+        return deleted
+    }
+    
+    reverse(){
+        let node = this.head
+        this.head = this.tail
+        this.tail = node
+        let next
+        let prev = null
+        for(let i = 0; i < this.length; i++){
+            next = node.next
+            node.next = prev
+            prev = node
+            node = next
+        }
+        return this
     }
 }
