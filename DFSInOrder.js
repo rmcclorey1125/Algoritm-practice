@@ -58,15 +58,14 @@ class BinarySearchTree {
         return false
     }
 
-    DFSPreOrder(){
+    DFSInOrder(){
         let data = []
-        let current = this.root
         function traverse(node){
-            data.push(node)
             if(node.left) traverse(node.left)
+            data.push(node)
             if(node.right) traverse(node.right)
         }
-        traverse(current)
+        traverse(this.root)
         return data
     }
 }
