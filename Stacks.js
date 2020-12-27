@@ -11,7 +11,6 @@ class Stack{
         this.last = null
         this.size = 0
     }
-
     push(val){
         let newNode = new Node(val)
         if(this.size === 0){
@@ -25,7 +24,6 @@ class Stack{
         this.size++
         return this.size
     }
-
     pop(){
         if(this.size === 0){
             return undefined

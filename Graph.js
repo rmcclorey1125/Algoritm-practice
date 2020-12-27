@@ -30,4 +30,25 @@ class Graph{
         }
         delete this.adjacencyList[vertex]
     }
+
+    DFSRecursive(start){
+        const allVertexs = []
+        const visted = {}
+        const adjacencyList = this.adjacencyList
+
+        (function recursive(vertex){
+            if(!vertex){
+                return null
+            }
+            visited[vertex] = true
+            allVertexs.push(vertex)
+            adjacencyList[vertex].forEach(neighbor => {
+                if(!visted[neighbor]){
+                    return dfs(neighbor)
+                }
+            })
+        })(start)
+
+        return result
+    }
 }
