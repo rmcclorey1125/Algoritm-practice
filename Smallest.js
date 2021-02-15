@@ -25,6 +25,8 @@ findSmallest(arr)
 
 
 
+
+
 // const set = new Set()
 // let max = 0
 // for(let i = 0; i < a.length; i++){

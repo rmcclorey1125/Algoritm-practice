@@ -1,3 +1,4 @@
+
 const strStr = (haystack, needle) => {
     if(needle.length === 0){
         return 0
@@ -11,3 +12,4 @@ const strStr = (haystack, needle) => {
 };
 
 strStr("hello", "ll")
+
