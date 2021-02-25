@@ -7,7 +7,7 @@ function solution(S, K) {
 
     let index = weekDays.findIndex((weekDay) => {return weekDay === S})
 
-    console.log(weekDays[(index+K)%7])
+    console.log(weekDays[(index+K)%7]) 
     return weekDays[(index+K)%7]
 }
 

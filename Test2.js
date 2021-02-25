@@ -3,7 +3,7 @@
 
 function solution(N) {
     // write your code in JavaScript (Node.js 8.9.4)
-    let str = N.toString();
+    let str = N.toString(); 
     let ans = -Infinity
     for(let i = 0; i <= str.length; i++){
         if(str[0] === '-'){

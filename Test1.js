@@ -2,7 +2,7 @@
 // console.log('this is a debug message');
 
 function balancedSubstring(str){
-    let k = 2
+    let k = 2 
 
     while(k <= str.length){
         for(let i = 0; i <= str.length - k; i++){
