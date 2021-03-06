@@ -11,7 +11,7 @@ const validate = (node, min = null, max = null) => {
         return false
     }
 
-    if(node.left && !validate(node.right, node.data, max)){
+    if(node.right && !validate(node.right, node.data, max)){
         return false
     }
 
