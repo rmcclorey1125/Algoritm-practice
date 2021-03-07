@@ -6,4 +6,4 @@ const rotate = (matrix) => {
         }
     }
     return matrix
-};
+}; 
