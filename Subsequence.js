@@ -12,4 +12,4 @@ function isSubsequence(str1, str2) {
     }
     return false
 }
-'sing' 'sting'
+// 'sing' 'sting'
