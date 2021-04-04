@@ -19,3 +19,25 @@ const longestSubstring = (s, k) => {
 };
 
 
+const lengthOfLongestSubstring = (str) => {
+
+    let left = 0
+    let right = 0
+    let set = new Set()
+    let max = 0
+    
+    while(right < str.length) {
+        if(!set.has(str.charAt(right))) {
+            set.add(str.charAt(right))
+            max = Math.max(max, set.size)
+            right++
+        } else {
+            set.delete(str.charAt(left))
+            left++
+        }
+    }
+    return max
+};
+
+
+
